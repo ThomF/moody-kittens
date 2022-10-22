@@ -20,7 +20,7 @@ function addKitten(event) {
     id: generateId(),
     name: form.name.value,
     tolerance: 1,
-    mood: 3,
+    mood: 1,
   };
 
   if (kittens.findIndex((finding) => finding.name == kitten.name) != -1) {
@@ -128,16 +128,21 @@ function pet(id) {
     if (kitten.id == id) {
       kitten.tolerance = kitten.tolerance + 1;
     }
-    if (tolerance >= maxTolerance) {
-      kitten.mood = moodClass + 1;
-    }
   });
 
   /*setKittenMood();*/
   console.log("kittens", kittens);
   saveKittens();
+  checkMood();
 }
-
+function checkMood() {
+  kittens.forEach((kitten) => {
+    if (tolerance >= maxTolerance) {
+      console.log("mood change");
+      kitten.mood = kitten.mood + 1;
+    }
+  });
+}
 /**
  * Find the kitten in the array of kittens
  * Set the kitten's mood to tolerant
