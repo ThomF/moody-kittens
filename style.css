@@ -157,14 +157,14 @@ button.btn-special:hover {
   filter: drop-shadow(2px 4px 6px #1b1b1b);
   transition: all 0.35s ease;
 }
-.kitten.happy {
+.kittenHappy {
   filter: drop-shadow(2px 4px 6px #00ffb3);
 }
-.kitten.tolerant {
+.kittenTolerant {
   filter: drop-shadow(2px 4px 6px #646464);
 }
 .kittenAngry {
-  outline: drop-shadow(2px 4px 6px #ff0000) contrast(1);
+  filter: drop-shadow(2px 4px 6px #ff0000) contrast(1);
 }
 .kitten.gone {
   filter: drop-shadow(2px 4px 6px #ff0000) contrast(0);

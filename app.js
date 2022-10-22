@@ -1,6 +1,6 @@
 let kittens = [];
 let tolerance = 0;
-let maxTolerance = 15;
+let maxTolerance = 10;
 let mood = 1;
 let maxMood = 4;
 
@@ -20,7 +20,7 @@ function addKitten(event) {
     id: generateId(),
     name: form.name.value,
     tolerance: 1,
-    mood: 1,
+    mood: 3,
   };
 
   if (kittens.findIndex((finding) => finding.name == kitten.name) != -1) {
@@ -76,14 +76,24 @@ function drawKittens() {
   let kittenTemplate = "";
 
   kittens.forEach((kitten) => {
+    let moodClass = "";
     console.log("kitten", kitten);
+    if (kitten.mood == 1) {
+      moodClass = "kittenAngry";
+    }
+    if (kitten.mood == 2) {
+      moodClass = "kittenTolerant";
+    }
+    if (kitten.mood == 3) {
+      moodClass = "kittenHappy";
+    }
     kittenTemplate += `
-    <div id="kitten" class="d-flex d-flex.justify-content-center flex-wrap
-    ">
+    <div id="kitten-${kitten.id}" class="d-flex d-flex.justify-content-center flex-wrap
+    ${moodClass}">
     <header>
       <h3>${kitten.name}</h3>
       </header>
-      <img id="kittenPix" class="kittenImage  " src="KittensIMG/MoodyKitten1.png" alt="kitten image"></img>
+      <img id="kittenPix" class="kittenImage" src="KittensIMG/MoodyKitten1.png" alt="kitten image"></img>
       <div class="content">
       <p>mood Level: ${kitten.mood} </p>
       <p>Head scratch ${kitten.tolerance} </p>
@@ -94,11 +104,6 @@ function drawKittens() {
     </div>
     `;
   });
-  /*kittens.forEach((kitten) => {
-    if ((kitten.mood = kitten.mood + 1)) {
-      kittenListElement.classList.add("kittenAngry");
-    }
-  });*/
 
   kittenListElement.innerHTML = kittenTemplate;
 }
@@ -121,14 +126,16 @@ function findKittenById(id) {}
 function pet(id) {
   kittens.forEach((kitten) => {
     if (kitten.id == id) {
-      kitten.tolerance = kitten.tolerance + 2;
+      kitten.tolerance = kitten.tolerance + 1;
+    }
+    if (tolerance >= maxTolerance) {
+      kitten.mood = moodClass + 1;
     }
   });
 
   /*setKittenMood();*/
   console.log("kittens", kittens);
   saveKittens();
-  drawKittens();
 }
 
 /**
