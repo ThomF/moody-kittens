@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Moody Kittens | CodeWorks</title>
+    <link rel="shortcut icon" href="moody-logo.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Catamaran&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!--TODO Submission-->
+  <body>
+    <header class="bg-dark d-flex align-items-center p-1 space-between">
+      <img src="moody-logo.png" height="60" alt="Moody Kittens" />
+      <form class="" onsubmit="addKitten(event)">
+        <div class="d-flex">
+          <input placeholder="Name" type="text" name="name" />
+          <button class="btn-special" type="submit">/ᐠ｡ꞈ｡ᐟ\</button>
+          <!--<button onclick="cancel()" class="cancelBtn" type="button">
+          cancel
+          </button>-->
+        </div>
+      </form>
+    </header>
+    <main class="container">
+      <div class="cardOG" id="kitten-list"></div>
+    </main>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Moody Kittens | CodeWorks</title>
-  <link rel="shortcut icon" href="moody-logo.png" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <header class="bg-dark d-flex align-items-center p-1 space-between">
-    <img src="moody-logo.png" height="60" alt="Moody Kittens">
-    <form class="" onsubmit="addKitten(event)">
-      <div class="d-flex">
-        <input placeholder="Name" type="text" name="name" />
-        <button class="btn-special" type="submit">
-          /ᐠ｡ꞈ｡ᐟ\
-        </button>
-      </div>
-    </form>
-  </header>
-  <main class="container">
+    <!-- <main id="get-started" class="container">
     <div id="welcome" class="d-flex justify-content-center">
       <div class="card p-2 text-center w-50">
         <img src="moody-logo.png" height="250" alt="Moody Kittens">
@@ -32,19 +39,46 @@
           <p>This is your starter template only feel free to modify the look as you tackle the challenges that we have laid out.</p>
           <small>Good Luck and Have Fun!</small>
           <br>
-          <button onclick="getStarted()">Get Started</button>
+          <button  onclick="getStarted()">Get Started</button>
         </div>
       </div>
     </div>
     <div class="p-2">
       <div id="kittens" class="d-flex align-items-center flex-wrap">
       </div>
-  </main>
-  <footer class="card bg-dark text-light p-2 d-flex align-items-center justify-content-center">
-    <small>Created with <span style="color: var(--primary)">&hearts;</span> by CodeWorks</small>
-  </footer>
+    </main>
+   <form
+        class="hidden card mt-1 mb-1 bg-dark"
+        id="add-kitten"
+        class=""
+        onsubmit="addKitten(event)"
+      >
+        <img
+          src="moody-logo.png"
+          height="60"
+          class="d-flex"
+          alt="Moody Kittens"
+        />
+        <div class="d-flex">
+          <div>
+            <label for="name">Kitten</label>
+            <input type="text" name="name" required />
+          </div>
+          <div class="d-flex space-between">
+            <button class="submit" type="submit">/ᐠ｡ꞈ｡ᐟ\ Submit</button>
+            <footer
+            id="footer"
+            class="cardOG bg-dark text-light p-2 d-flex align-items-center justify-content-center"
+            >
+            <small
+            >Created with <span style="color: var(--primary)">&hearts;</span> by
+            CodeWorks and Thomas :)
+          </small>
+        -->
 
+      <!--<button onclick="addKtn()">New Kitten</button>
+      <button onclick="clearKittens()">Set all Kittens Free</button>-->
+    </footer>
+  </body>
   <script src="app.js"></script>
-</body>
-
 </html>
