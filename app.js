@@ -1,8 +1,9 @@
 let kittens = [];
 let tolerance = 0;
 let maxTolerance = 10;
+let minTolerance = -1;
 let mood = 1;
-let maxMood = 4;
+let maxMood = 3;
 
 /**
  * Called when submitting the new Kitten Form
@@ -132,8 +133,8 @@ function pet(id) {
 
   /*setKittenMood();*/
   console.log("kittens", kittens);
-  saveKittens();
   checkMood();
+  saveKittens();
 }
 function checkMood() {
   kittens.forEach((kitten) => {
