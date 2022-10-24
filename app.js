@@ -78,14 +78,14 @@ function drawKittens() {
     if (kitten.mood == 1) {
       moodClass = "kittenHappy";
     }
-    /** TODO -- removed this so you cant see mood <p>mood Level: ${kitten.mood} </p> */
+    /** TODO -- removed this so you cant see mood -- <p>mood Level: ${kitten.mood} </p> */
     kittenTemplate += `
     <div id="kitten-${kitten.id}" class="d-flex d-flex.justify-content-center flex-wrap
     ${moodClass}">
     <header>
       <h3>${kitten.name}</h3>
       </header>
-      <img id="kittenPix" class="kittenImage" src="KittensIMG/MoodyKitten1.png" alt="kitten image"></img>
+      <img class="kittenImage" url="kittensIMG/MoodyKitten1.png" alt="kitten image"></img>
       <div class="content">
      
       <p>Head scratch ${kitten.tolerance} </p>
