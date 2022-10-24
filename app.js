@@ -85,7 +85,7 @@ function drawKittens() {
     <header>
       <h3>${kitten.name}</h3>
       </header>
-      <img class="kittenImage" url="kittensIMG/MoodyKitten1.png" alt="kitten image"></img>
+      <img class="kittenImage" src="kittensIMG/MoodyKitten1.png" alt="kitten image"></img>
       <div class="content">
      
       <p>Head scratch ${kitten.tolerance} </p>
