@@ -3,7 +3,8 @@ let tolerance = 0;
 let maxTolerance = 10;
 let minTolerance = -1;
 let mood = 1;
-let maxMood = 3;
+let maxMood = 4;
+let minMood = 0;
 
 /**
  * Called when submitting the new Kitten Form
@@ -35,18 +36,7 @@ function addKitten(event) {
   saveKittens();
   form.reset();
 }
-/*›
-function inArray(kittens) {
-  var count = kittens.name;
-  for (var i = 0; i < count; i++) {
-    if (Name[i] === kittens.name) {
-      alert("Name exist");
-      form.reset();
-      return true;
-    }
-  }
-  return false;
-}*/
+
 /**
  * Converts the kittens array to a JSON string then
  * Saves the string to localstorage at the key kittens
@@ -71,7 +61,7 @@ function loadKittens() {
 /**
  * Draw all of the kittens to the kittens element
  */
-/*TODO throwing : Cannot set properties of null (setting 'innerHTML') error */
+
 function drawKittens() {
   let kittenListElement = document.getElementById("kitten-list");
   let kittenTemplate = "";
@@ -79,15 +69,16 @@ function drawKittens() {
   kittens.forEach((kitten) => {
     let moodClass = "";
     console.log("kitten", kitten);
-    if (kitten.mood == 1) {
+    if (kitten.mood == 3) {
       moodClass = "kittenAngry";
     }
     if (kitten.mood == 2) {
       moodClass = "kittenTolerant";
     }
-    if (kitten.mood == 3) {
+    if (kitten.mood == 1) {
       moodClass = "kittenHappy";
     }
+    /** TODO -- removed this so you cant see mood <p>mood Level: ${kitten.mood} </p> */
     kittenTemplate += `
     <div id="kitten-${kitten.id}" class="d-flex d-flex.justify-content-center flex-wrap
     ${moodClass}">
@@ -96,7 +87,7 @@ function drawKittens() {
       </header>
       <img id="kittenPix" class="kittenImage" src="KittensIMG/MoodyKitten1.png" alt="kitten image"></img>
       <div class="content">
-      <p>mood Level: ${kitten.mood} </p>
+     
       <p>Head scratch ${kitten.tolerance} </p>
       <button type="button" onclick="pet('${kitten.id}')">Pet</button>
       <button type="button" onclick="catnip('${kitten.id}')">catnip</button>
@@ -134,12 +125,29 @@ function pet(id) {
   /*setKittenMood();*/
   console.log("kittens", kittens);
   checkMood();
+  checkMoodMax();
+  checkMinMood();
   saveKittens();
 }
 function checkMood() {
   kittens.forEach((kitten) => {
-    if (tolerance >= maxTolerance) {
+    if (kitten.tolerance >= maxTolerance) {
       console.log("mood change");
+      kitten.mood = kitten.mood + 1;
+      kitten.tolerance = 0;
+    }
+  });
+}
+function checkMoodMax() {
+  kittens.forEach((kitten) => {
+    if (kitten.mood == maxMood) {
+      removeKitten();
+    }
+  });
+}
+function checkMinMood() {
+  kittens.forEach((kitten) => {
+    if (kitten.mood <= minMood) {
       kitten.mood = kitten.mood + 1;
     }
   });
@@ -157,14 +165,20 @@ function catnip(id) {
     }
   });
   console.log("kittens", kittens);
+  catnipMood();
+  checkMinMood();
   saveKittens();
 }
-
+function catnipMood() {
+  kittens.forEach((kitten) => {
+    if (kitten.tolerance <= minTolerance) console.log("mood change");
+    kitten.mood = kitten.mood - 1;
+    kitten.tolerance = 0;
+  });
+}
 function removeKitten(id) {
   let index = kittens.findIndex((kitten) => kitten.id == id);
-  if (index == -1) {
-    throw new error("Invalid kitten Id");
-  }
+  if (index == -1);
   kittens.splice(index, 1);
   saveKittens();
 }
