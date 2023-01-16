@@ -173,7 +173,7 @@ function catnipMood() {
   kittens.forEach((kitten) => {
     if (kitten.tolerance <= minTolerance) console.log("mood change");
     kitten.mood = kitten.mood - 1;
-    kitten.tolerance = 0;
+    kitten.tolerance = 5;
   });
 }
 function removeKitten(id) {
