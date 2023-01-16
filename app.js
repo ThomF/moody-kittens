@@ -88,7 +88,7 @@ function drawKittens() {
       <img class="kittenImage" src="kittensIMG/MoodyKitten1.png" alt="kitten image"></img>
       <div class="content">
      
-      <p>Head scratch ${kitten.tolerance} </p>
+      <p>Head Pets ${kitten.tolerance} </p>
       <button type="button" onclick="pet('${kitten.id}')">Pet</button>
       <button type="button" onclick="catnip('${kitten.id}')">catnip</button>
       <button type="button" onclick="removeKitten('${kitten.id}')">Free Cat</button>
