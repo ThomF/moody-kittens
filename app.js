@@ -195,7 +195,14 @@ function setKittenMood(kitten) {
     kittenElement.classList.add("kittenAngry");
   }
 }
-
+function buttonAddCat() {
+  document.getElementById("addCatForm").classList.remove("hidden");
+  document.getElementById("newCat").classList.add("hidden");
+}
+function buttonSubmitCat() {
+  document.getElementById("addCatForm").classList.add("hidden");
+  document.getElementById("newCat").classList.remove("hidden");
+}
 /**
  * Removes all of the kittens from the array
  * remember to save this change

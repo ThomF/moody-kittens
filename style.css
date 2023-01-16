@@ -121,6 +121,23 @@ button.btn-special:focus {
 button.btn-special:hover {
   color: var(--primary);
 }
+#newCat:hover {
+  animation: color-change 0.3s infinite;
+}
+#newCat {
+  animation: color-change 0.3s infinite;
+}
+@keyframes color-change {
+  0% {
+    color: purple;
+  }
+  50% {
+    color: rgb(215, 4, 215);
+  }
+  100% {
+    color: rgb(255, 30, 255);
+  }
+}
 .container {
   margin: 0 0.5em;
 }

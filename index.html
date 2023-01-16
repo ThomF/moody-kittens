@@ -18,12 +18,16 @@
     <header id="inputHeader" class="bg-dark d-flex align-items-center p-1 space-between">
       <img src="kittensIMG/MKLogo.png" height="60" alt="Moody Kittens" />
       <form class="" onsubmit="addKitten(event)">
-        <div class="d-flex">
+        <div class="d-flex hidden" id="addCatForm">
           <input placeholder="Name" type="text" name="name" />
-          <button class="btn-special" type="submit">/ᐠ｡ꞈ｡ᐟ\</button>
+          <button class="btn-special" type="submit" onclick="buttonSubmitCat()">/ᐠ｡ꞈ｡ᐟ\</button>
         
         </div>
+       
       </form>
+      <div>
+        <button class="" id="newCat" onclick="buttonAddCat()">Adopt a New Moody Kitten Here!</button>
+      </div>
     </header>
     <div id="kitten" class="Kitten"></div>
     <main class="container">
