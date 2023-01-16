@@ -40,6 +40,9 @@ main {
 #welcome {
   min-height: calc(95vh - (120px + 80px));
 }
+#newCat {
+  font-family: "Silkscreen", sans-serif;
+}
 footer {
   height: 120px;
 }
